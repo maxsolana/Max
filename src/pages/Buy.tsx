@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog";
 import { Snowfall } from "../components/Snowfall";
-import solanaImg from "/solana-logo.png";
-import logoImg from "/logo.png";
+import solanaImg from "../assets/solana-logo.png";
+import logoImg from "../assets/logo.png";
 
 const WALLET_ADDRESS = "DTc8PRT3e3KUAbq1vHrnKm8t2EtNmVjgjThD7t2wdm25";
 const BUY_AMOUNTS = [0.1, 0.5, 1, 2, 5, 10];
@@ -84,7 +84,7 @@ export default function Buy() {
         {/* Amount Selection Grid */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Select Amount</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {BUY_AMOUNTS.map((amount, i) => (
               <motion.button
                 key={amount}
@@ -95,17 +95,17 @@ export default function Buy() {
                   setSelectedAmount(amount);
                   setShowPaymentForm(false);
                 }}
-                className={`p-6 rounded-lg border transition-all duration-300 text-center font-bold hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-3 ${
+                className={`p-8 rounded-lg border transition-all duration-300 text-center font-bold hover:scale-[1.05] active:scale-95 flex flex-col items-center justify-center gap-4 min-h-[160px] ${
                   selectedAmount === amount
-                    ? "bg-gradient-to-br from-primary/40 to-yellow-600/30 border-primary/60 ring-2 ring-primary"
+                    ? "bg-gradient-to-br from-primary/40 to-yellow-600/30 border-primary/60 ring-2 ring-primary shadow-lg shadow-primary/20"
                     : amount === 5
                     ? "bg-gradient-to-br from-primary/25 to-yellow-600/15 border-primary/45"
                     : "bg-white/5 border-white/10 hover:bg-white/10"
                 }`}
               >
-                <div className="text-3xl text-white">{amount}</div>
-                <img src={solanaImg} alt="Solana" className="w-6 h-6 object-contain" />
-                <div className="text-sm text-muted-foreground">SOL</div>
+                <div className="text-4xl text-white">{amount}</div>
+                <img src={solanaImg} alt="Solana" className="w-8 h-8 object-contain" />
+                <div className="text-sm text-muted-foreground font-medium uppercase tracking-widest">SOL</div>
               </motion.button>
             ))}
           </div>

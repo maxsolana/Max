@@ -6,17 +6,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "./pages/Home";
 import Buy from "./pages/Buy";
 import NotFound from "./pages/not-found";
-import { useHashLocation } from "wouter/use-hash-location";
+// import { useHashLocation } from "wouter/use-hash-location";
 
 function AppRouter() {
   return (
-    <Router hook={useHashLocation}>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/buy" component={Buy} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/buy" component={Buy} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 

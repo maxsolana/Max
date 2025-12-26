@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Copy, Check, Wallet, Calendar, Gift, TrendingUp, ChevronRight, ShoppingCart, ChevronDown, Twitter, Send } from "lucide-react";
-import solanaLogo from "/solana-logo.png";
-import logoImg from "/logo.png";
+import solanaLogo from "../assets/solana-logo.png";
+import logoImg from "../assets/logo.png";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog";
 import { useToast } from "../hooks/use-toast";
 import { useLogEvent } from "../hooks/use-events";
@@ -177,7 +177,7 @@ export default function Home() {
         {/* Tokenomics Grid */}
         <div className="mb-12">
           <h3 className="text-lg font-bold text-white mb-4">Tokenomics</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {tokenomicsData.map((item, i) => (
               <motion.button
                 key={item.id}
@@ -185,16 +185,16 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => setSelectedCard(item.id)}
-                className={`bg-gradient-to-r ${item.color} border ${item.borderColor} rounded-lg p-4 text-left hover:scale-105 transition-transform duration-300 cursor-pointer group`}
+                className={`bg-gradient-to-r ${item.color} border ${item.borderColor} rounded-lg p-6 text-left hover:scale-[1.02] transition-all duration-300 cursor-pointer group flex flex-col justify-between h-full min-h-[140px]`}
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div>
+                <div className="flex items-start justify-between mb-3 w-full">
+                  <div className="flex-1">
                     <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">{item.label}</p>
                     <p className="text-2xl font-black text-white mt-1">{item.value}</p>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-white transition-colors" />
+                  <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-white transition-colors shrink-0" />
                 </div>
-                <p className="text-xs text-gray-300 font-mono truncate">{item.tokens}</p>
+                <p className="text-sm text-gray-300 font-mono mt-auto">{item.tokens}</p>
               </motion.button>
             ))}
           </div>
