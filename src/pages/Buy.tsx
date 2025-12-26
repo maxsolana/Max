@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog";
-import { Snowfall } from "../components/Snowfall";
-import solanaImg from "../assets/solana-logo.png";
-import logoImg from "../assets/logo.png";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Snowfall } from "@/components/Snowfall";
+import solanaImg from "/solana-logo.png";
+import logoImg from "/logo.png";
 
 const WALLET_ADDRESS = "DTc8PRT3e3KUAbq1vHrnKm8t2EtNmVjgjThD7t2wdm25";
 const BUY_AMOUNTS = [0.1, 0.5, 1, 2, 5, 10];

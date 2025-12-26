@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Copy, Check, Wallet, Calendar, Gift, TrendingUp, ChevronRight, ShoppingCart, ChevronDown, Twitter, Send } from "lucide-react";
-import solanaLogo from "../assets/solana-logo.png";
-import logoImg from "../assets/logo.png";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog";
-import { useToast } from "../hooks/use-toast";
-import { useLogEvent } from "../hooks/use-events";
-import { Snowfall } from "../components/Snowfall";
+import solanaLogo from "/solana-logo.png";
+import logoImg from "/logo.png";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useToast } from "@/hooks/use-toast";
+import { useLogEvent } from "@/hooks/use-events";
+import { Snowfall } from "@/components/Snowfall";
 
 
 export default function Home() {
@@ -203,17 +203,19 @@ export default function Home() {
         {/* Presale Details Grid */}
         <div className="mb-12">
           <h3 className="text-lg font-bold text-white mb-4">Presale Info</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <motion.button
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               onClick={() => setSelectedCard("timeline")}
-              className="bg-gradient-to-br from-secondary/20 to-secondary/5 border border-secondary/30 rounded-lg p-5 text-left hover:scale-105 transition-transform duration-300"
+              className="bg-gradient-to-br from-secondary/20 to-secondary/5 border border-secondary/30 rounded-lg p-6 text-left hover:scale-[1.02] transition-all duration-300 min-h-[160px] flex flex-col justify-between"
             >
-              <Calendar className="w-6 h-6 text-secondary mb-3" />
-              <p className="text-sm font-semibold text-muted-foreground mb-1">Timeline</p>
-              <p className="text-white font-bold">Jan 15, 2026</p>
-              <p className="text-xs text-muted-foreground mt-2">Ends & Listing</p>
+              <div>
+                <Calendar className="w-8 h-8 text-secondary mb-4" />
+                <p className="text-sm font-semibold text-muted-foreground mb-1">Timeline</p>
+                <p className="text-2xl font-bold text-white">Jan 15, 2026</p>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">Ends & Listing</p>
             </motion.button>
 
             <motion.button
@@ -221,12 +223,14 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
               onClick={() => setSelectedCard("bonuses")}
-              className="bg-gradient-to-br from-green-500/20 to-green-500/5 border border-green-500/30 rounded-lg p-5 text-left hover:scale-105 transition-transform duration-300"
+              className="bg-gradient-to-br from-green-500/20 to-green-500/5 border border-green-500/30 rounded-lg p-6 text-left hover:scale-[1.02] transition-all duration-300 min-h-[160px] flex flex-col justify-between"
             >
-              <Gift className="w-6 h-6 text-green-400 mb-3" />
-              <p className="text-sm font-semibold text-muted-foreground mb-1">Bonuses</p>
-              <p className="text-white font-bold">All Eligible</p>
-              <p className="text-xs text-green-400 mt-2">+Telegram/Twitter</p>
+              <div>
+                <Gift className="w-8 h-8 text-green-400 mb-4" />
+                <p className="text-sm font-semibold text-muted-foreground mb-1">Bonuses</p>
+                <p className="text-2xl font-bold text-white">All Eligible</p>
+              </div>
+              <p className="text-xs text-green-400 mt-4">+Telegram/Twitter</p>
             </motion.button>
           </div>
         </div>
