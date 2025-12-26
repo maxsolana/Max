@@ -25,19 +25,20 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  publicDir: "public",
-  root: ".",
+  base: "./",
   build: {
     outDir: "dist",
     emptyOutDir: true,
     assetsDir: "assets",
+    copyPublicDir: true,
     rollupOptions: {
       input: {
         main: path.resolve(import.meta.dirname, "index.html"),
       },
     },
   },
-  base: "./",
+  publicDir: "public",
+  root: ".",
   server: {
     fs: {
       strict: true,
