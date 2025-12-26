@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { Copy, Check, Wallet, Calendar, Gift, TrendingUp, ChevronRight, ShoppingCart, ChevronDown, Twitter, Send } from "lucide-react";
 import solanaLogo from "/solana-logo.png";
 import logoImg from "/logo.png";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { useToast } from "@/hooks/use-toast";
-import { useLogEvent } from "@/hooks/use-events";
-import { Snowfall } from "@/components/Snowfall";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog";
+import { useToast } from "../hooks/use-toast";
+import { useLogEvent } from "../hooks/use-events";
+import { Snowfall } from "../components/Snowfall";
 
 
 export default function Home() {
