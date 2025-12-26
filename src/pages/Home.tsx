@@ -177,7 +177,7 @@ export default function Home() {
         {/* Tokenomics Grid */}
         <div className="mb-12">
           <h3 className="text-lg font-bold text-white mb-4">Tokenomics</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
             {tokenomicsData.map((item, i) => (
               <motion.button
                 key={item.id}

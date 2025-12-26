@@ -26,6 +26,9 @@ export default defineConfig({
     },
   },
   base: "./",
+  css: {
+    devSourcemap: true,
+  },
   build: {
     outDir: "dist",
     emptyOutDir: true,
